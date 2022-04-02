@@ -27,3 +27,10 @@ Route::post('admin/country/store', [\App\Http\Controllers\Admin\CountryControlle
 Route::get('admin/country/edit/{id}', [\App\Http\Controllers\Admin\CountryController::class, 'edit'])->name('admin.country_edit');
 Route::put('admin/country/update/{id}', [\App\Http\Controllers\Admin\CountryController::class, 'update'])->name('admin.country_update');
 Route::delete('admin/country/delete/{id}', [\App\Http\Controllers\Admin\CountryController::class, 'delete'])->name('admin.country_delete');
+
+//Auth::routes();
+Route::get('logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
+Route::get('login', [\App\Http\Controllers\AuthController::class, 'login']);
+Route::post('auth', [\App\Http\Controllers\AuthController::class, 'auth']);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
