@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::get('mypage', [\App\Http\Controllers\MyController::class, 'myPage']);
 
+<<<<<<<<< Temporary merge branch 1
 //ADMIN
 Route::get('main', [\App\Http\Controllers\Admin\AdminController::class, 'main']);
 Route::get('admin/country', [\App\Http\Controllers\Admin\CountryController::class, 'index']);
