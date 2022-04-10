@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('mypage', [\App\Http\Controllers\MyController::class, 'myPage']);
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //ADMIN
 Route::get('main', [\App\Http\Controllers\Admin\AdminController::class, 'main']);
