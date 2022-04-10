@@ -18,8 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('mypage', [\App\Http\Controllers\MyController::class, 'myPage']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-<<<<<<<<< Temporary merge branch 1
 //ADMIN
 Route::get('main', [\App\Http\Controllers\Admin\AdminController::class, 'main']);
 Route::get('admin/country', [\App\Http\Controllers\Admin\CountryController::class, 'index']);
@@ -34,4 +34,4 @@ Route::get('logout', [\App\Http\Controllers\AuthController::class, 'logout'])->n
 Route::get('login', [\App\Http\Controllers\AuthController::class, 'login']);
 Route::post('auth', [\App\Http\Controllers\AuthController::class, 'auth']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
