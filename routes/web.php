@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('mypage', [\App\Http\Controllers\MyController::class, 'myPage']);
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //ADMIN
 Route::get('main', [\App\Http\Controllers\Admin\AdminController::class, 'main']);
@@ -30,8 +30,12 @@ Route::put('admin/country/update/{id}', [\App\Http\Controllers\Admin\CountryCont
 Route::delete('admin/country/delete/{id}', [\App\Http\Controllers\Admin\CountryController::class, 'delete'])->name('admin.country_delete');
 
 //Auth::routes();
-Route::get('logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
-Route::get('login', [\App\Http\Controllers\AuthController::class, 'login']);
-Route::post('auth', [\App\Http\Controllers\AuthController::class, 'auth']);
+//Route::get('logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
+//Route::get('login', [\App\Http\Controllers\AuthController::class, 'login']);
+//Route::post('auth', [\App\Http\Controllers\AuthController::class, 'auth']);
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
