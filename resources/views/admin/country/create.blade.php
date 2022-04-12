@@ -18,7 +18,7 @@
                 <input type="file" name="imgFlag" class="form-control" >
             </div>
 
-            <button type="Добавить" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default">Добавить</button>
         </form>
     </div>
 @endsection

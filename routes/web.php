@@ -18,24 +18,26 @@ Route::get('/', function () {
 });
 
 Route::get('mypage', [\App\Http\Controllers\MyController::class, 'myPage']);
-//Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 //ADMIN
-Route::get('main', [\App\Http\Controllers\Admin\AdminController::class, 'main']);
+Route::get('admin', [\App\Http\Controllers\Admin\AdminController::class, 'admin']);
+
+//ADMIN COUNTRY
 Route::get('admin/country', [\App\Http\Controllers\Admin\CountryController::class, 'index']);
 Route::get('admin/country/create', [\App\Http\Controllers\Admin\CountryController::class, 'create']);
 Route::post('admin/country/store', [\App\Http\Controllers\Admin\CountryController::class, 'store'])->name('admin.country_store');
-Route::get('admin/country/edit/{id}', [\App\Http\Controllers\Admin\CountryController::class, 'edit'])->name('admin.country_edit');
-Route::put('admin/country/update/{id}', [\App\Http\Controllers\Admin\CountryController::class, 'update'])->name('admin.country_update');
-Route::delete('admin/country/delete/{id}', [\App\Http\Controllers\Admin\CountryController::class, 'delete'])->name('admin.country_delete');
+Route::get('admin/country/{id}/edit', [\App\Http\Controllers\Admin\CountryController::class, 'edit'])->name('admin.country_edit');
+Route::put('admin/country/{id}/update', [\App\Http\Controllers\Admin\CountryController::class, 'update'])->name('admin.country_update');
+Route::delete('admin/country/{id}/delete', [\App\Http\Controllers\Admin\CountryController::class, 'delete'])->name('admin.country_delete');
 
-//Auth::routes();
+
+//AUTH
+
 //Route::get('logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 //Route::get('login', [\App\Http\Controllers\AuthController::class, 'login']);
 //Route::post('auth', [\App\Http\Controllers\AuthController::class, 'auth']);
 
-
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
