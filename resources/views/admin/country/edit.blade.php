@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="grid-form1">
-        <h3 id="forms-example" class="">Добавление страны</h3>
+        <h3 id="forms-example" class="">Редактирование страны</h3>
         <form action="{{route('country.update', ['country'=>$country])}}" method="POST" enctype="multipart/form-data">
             @method('PUT')
             @csrf
@@ -19,7 +19,7 @@
                 <input type="file" name="imgFlag" class="form-control" value="{{$country->imgFlag}}" >
             </div>
 
-            <button type="submit" class="btn btn-default">Добавить</button>
+            <button type="submit" class="btn btn-default">Изменить</button>
         </form>
     </div>
 @endsection
