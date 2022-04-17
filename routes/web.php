@@ -32,7 +32,12 @@ Route::get('admin/country/{id}/edit', [\App\Http\Controllers\Admin\CountryContro
 Route::put('admin/country/{id}/update', [\App\Http\Controllers\Admin\CountryController::class, 'update'])->name('admin.country_update');
 Route::delete('admin/country/{id}/delete', [\App\Http\Controllers\Admin\CountryController::class, 'delete'])->name('admin.country_delete');
 
+Route::prefix('admin')->group(function (){
 
+    Route::resource('article', \App\Http\Controllers\Admin\ArticleController::class);
+});
+
+//Route::resource('admin/article', \App\Http\Controllers\Admin\ArticleController::class);
 //AUTH
 
 //Route::get('logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');

@@ -19,7 +19,7 @@
                 <input type="file" name="imgFlag" class="form-control" value="{{$country->imgFlag}}" >
             </div>
 
-            <button type="Добавить" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default">Добавить</button>
         </form>
     </div>
 @endsection
