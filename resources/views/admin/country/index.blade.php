@@ -20,8 +20,8 @@
                                 <td>{{$country->name}}</td>
                                 <td>{{$country->code}}</td>
                                 <td>
-                                    <a href="{{route('admin.country_edit', ['id'=>$country->id])}}" class="btn btn-sm btn-info">Редактировать</a>
-                                    <form method="POST" action="{{route('admin.country_delete', ['id'=>$country->id])}}">
+                                    <a href="{{route('country.edit', ['country'=>$country])}}" class="btn btn-sm btn-info">Редактировать</a>
+                                    <form method="POST" action="{{route('country.destroy', ['country'=>$country])}}">
                                         @method("DELETE")
                                         @csrf
                                         <button type="submit" class="btn btn-sm btn-danger">Удалить</button>
