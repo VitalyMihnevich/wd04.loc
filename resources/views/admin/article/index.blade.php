@@ -2,26 +2,26 @@
 
 @section('content')
     <div class="grid_3 grid_5">
-        <h3 class="head-top">Страны</h3>
+        <h3 class="head-top">Статьи</h3>
         <div class="but_list">
             <div class="col-md-12 page_1">
-                <p>Редактирование списка стран</p>
+                <p>Редактирование списка статей</p>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Страна</th>
-                            <th>Код Alpha2</th>
+                            <th>Наименование</th>
+                            <th>Статья</th>
                             <th>Редактировать</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($countries as $country)
+                        @foreach($articles as $article)
                             <tr>
-                                <td>{{$country->name}}</td>
-                                <td>{{$country->code}}</td>
+                                <td>{{$article->name}}</td>
+                                <td>{{$article->content}}</td>
                                 <td>
-                                    <a href="{{route('country.edit', ['country'=>$country])}}" class="btn btn-sm btn-info">Редактировать</a>
-                                    <form method="POST" action="{{route('country.destroy', ['country'=>$country])}}">
+                                    <a href="{{route('article.edit', ['article'=>$article])}}" class="btn btn-sm btn-info">Редактировать</a>
+                                    <form method="POST" action="{{route('article.destroy', ['article'=>$article])}}">
                                         @method("DELETE")
                                         @csrf
                                         <button type="submit" class="btn btn-sm btn-danger">Удалить</button>

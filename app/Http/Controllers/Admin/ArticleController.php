@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Country;
-use Illuminate\Http\Request;
+use App\Models\Article;
+use App\Http\Requests\StoreArticleRequest;
+use App\Http\Requests\UpdateArticleRequest;
+use Illuminate\Routing\Controller;
 
-class CountryController extends Controller
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,9 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $countries = Country::all();
-        return view('admin.country.index', [
-            'countries' => $countries
+        $articles = Article::all();
+        return view('admin.article.index', [
+            'articles' => $articles
     ]);
     }
 
@@ -28,29 +29,27 @@ class CountryController extends Controller
      */
     public function create()
     {
-
-        return view('admin.country.create');
-
+        return view('admin.article.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreArticleRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreArticleRequest $request)
     {
-        Country::query()->create($request->all());
+        Article::query()->create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Country  $country
+     * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show(Country $country)
+    public function show(Article $article)
     {
         //
     }
@@ -58,35 +57,34 @@ class CountryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Country  $country
+     * @param  \App\Models\Article  $article
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Country $country)
+    public function edit(Article $article)
     {
-        return view('admin.country.edit', compact('country'));
+        return view('admin.article.edit', compact('article'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Country  $country
+     * @param  \App\Http\Requests\UpdateArticleRequest  $request
+     * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Country $country)
+    public function update(UpdateArticleRequest $request, Article $article)
     {
-        $country->fill($request->all());
-        $country->save();
+        $article->fill($request->all())->save();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Country  $country
+     * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Country $country)
+    public function destroy(Article $article)
     {
-        $country->delete();
+        $article->delete();
     }
 }

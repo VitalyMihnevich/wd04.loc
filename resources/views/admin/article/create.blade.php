@@ -2,19 +2,19 @@
 
 @section('content')
     <div class="grid-form1">
-        <h3 id="forms-example" class="">Добавление страны</h3>
-        <form action="{{route('country.store')}}" method="POST" enctype="multipart/form-data">
+        <h3 id="forms-example" class="">Добавление статьи</h3>
+        <form action="{{route('article.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="exampleInputEmail1">Страна</label>
+                <label for="exampleInputEmail1">Статья</label>
                 <input type="text" name="name" class="form-control">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Код Alpha2</label>
+                <label for="exampleInputPassword1">Содержание</label>
                 <input type="text" name="code" class="form-control" >
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Флаг</label>
+                <label for="exampleInputPassword1">Картинка</label>
                 <input type="file" name="imgFlag" class="form-control" >
             </div>
 
