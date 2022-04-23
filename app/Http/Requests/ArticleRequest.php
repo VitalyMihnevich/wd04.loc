@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreArticleRequest extends FormRequest
+class ArticleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreArticleRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,11 @@ class StoreArticleRequest extends FormRequest
      */
     public function rules()
     {
+        //$id = $this->country->id ?? '';
+
         return [
-            //
+            'name' => 'required|min:10|max:200',
+            'content' => 'required|min:10|max:512',
         ];
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CountryRequest;
 use App\Models\Country;
 use Illuminate\Http\Request;
 
@@ -39,9 +40,9 @@ class CountryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CountryRequest $request)
     {
-        Country::query()->create($request->all());
+        Country::create($request->all());
     }
 
     /**
@@ -73,7 +74,7 @@ class CountryController extends Controller
      * @param  \App\Models\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Country $country)
+    public function update(CountryRequest $request, Country $country)
     {
         $country->fill($request->all());
         $country->save();
