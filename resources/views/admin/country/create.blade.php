@@ -9,10 +9,24 @@
                 <label for="exampleInputEmail1">Страна</label>
                 <input type="text" name="name" class="form-control">
             </div>
+            @if($errors->has('name'))
+                @foreach($errors->get('name') as $errorsMessage)
+                    <div class="alert alert-danger" role="alert">
+                        {{$errorsMessage}}
+                    </div>
+                @endforeach
+            @endif
             <div class="form-group">
-                <label for="exampleInputPassword1">Код Alpha2</label>
+                <label for="exampleInputPassword1">Код страны</label>
                 <input type="text" name="code" class="form-control" >
             </div>
+            @if($errors->has('code'))
+                @foreach($errors->get('code') as $errorsMessage)
+                <div class="alert alert-danger" role="alert">
+                    {{$errorsMessage}}
+                </div>
+                @endforeach
+            @endif
             <div class="form-group">
                 <label for="exampleInputPassword1">Флаг</label>
                 <input type="file" name="imgFlag" class="form-control" >
