@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CountryRequest;
 use App\Models\Country;
-use Illuminate\Http\Request;
 
 class CountryController extends Controller
 {
