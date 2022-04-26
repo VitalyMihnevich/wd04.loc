@@ -38,6 +38,7 @@ Route::prefix('admin')->group(function (){
     Route::resource('article', \App\Http\Controllers\Admin\ArticleController::class);
     Route::resource('country', \App\Http\Controllers\Admin\CountryController::class);
     Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('product', \App\Http\Controllers\Admin\ProductController::class);
 });
 
 //Route::resource('admin/article', \App\Http\Controllers\Admin\ArticleController::class);

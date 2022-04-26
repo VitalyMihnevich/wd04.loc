@@ -37,7 +37,7 @@
                 <input type="file" name="imgFlag" class="form-control" >
             </div>
 
-            <button type="submit" class="btn btn-default">Сщздать</button>
+            <button type="submit" class="btn btn-default">Создать</button>
         </form>
     </div>
 @endsection

@@ -183,6 +183,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </li>
 
                         <li>
+                            <a href="{{route('product.index')}}" class=" hvr-bounce-to-right"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Товары</span> </a>
+                        </li>
+
+                        <li>
                             <a href="gallery.html" class=" hvr-bounce-to-right"><i class="fa fa-picture-o nav_icon"></i> <span class="nav-label">Gallery</span> </a>
                         </li>
                         <li>
