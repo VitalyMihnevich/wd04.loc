@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('site.index');
 });
-
+Route::get('/', [\App\Http\Controllers\SiteController::class, 'index']);
 Route::get('mypage', [\App\Http\Controllers\MyController::class, 'myPage']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -36,6 +37,7 @@ Route::prefix('admin')->group(function (){
 
     Route::resource('article', \App\Http\Controllers\Admin\ArticleController::class);
     Route::resource('country', \App\Http\Controllers\Admin\CountryController::class);
+    Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
 });
 
 //Route::resource('admin/article', \App\Http\Controllers\Admin\ArticleController::class);
